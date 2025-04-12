@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Math",
+        "prerequisites": []
+    },
+    {
+        "id": 2,
+        "name": "English",
+        "prerequisites": []
+    },
+    {
+        "id": 3,
+        "name": "Science",
+        "prerequisites": [
+            1,
+            2
+        ]
+    },
+    {
+        "id": 4,
+        "name": "History",
+        "prerequisites": [
+            3
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Geography",
+        "prerequisites": []
+    },
+    {
+        "id": 6,
+        "name": "Art",
+        "prerequisites": []
+    }
+]

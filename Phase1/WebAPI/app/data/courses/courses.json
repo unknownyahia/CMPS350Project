@@ -1,37 +1,33 @@
 [
     {
-        "id": 1,
-        "name": "Math",
-        "prerequisites": []
+      "id": 1,
+      "name": "Calculus I",
+      "prerequisites": []
     },
     {
-        "id": 2,
-        "name": "English",
-        "prerequisites": []
+      "id": 2,
+      "name": "Academic Writing",
+      "prerequisites": []
     },
     {
-        "id": 3,
-        "name": "Science",
-        "prerequisites": [
-            1,
-            2
-        ]
+      "id": 3,
+      "name": "Physics I",
+      "prerequisites": [1, 2]
     },
     {
-        "id": 4,
-        "name": "History",
-        "prerequisites": [
-            3
-        ]
+      "id": 4,
+      "name": "Modern History",
+      "prerequisites": [3]
     },
     {
-        "id": 5,
-        "name": "Geography",
-        "prerequisites": []
+      "id": 5,
+      "name": "Human Geography",
+      "prerequisites": []
     },
     {
-        "id": 6,
-        "name": "Art",
-        "prerequisites": []
+      "id": 6,
+      "name": "Visual Arts",
+      "prerequisites": []
     }
-]
+  ]
+  

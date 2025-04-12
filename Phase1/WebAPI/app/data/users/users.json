@@ -1,44 +1,108 @@
 [
     {
-        "id": 1,
-        "name": "Leanne Graham",
-        "username": "Bret",
-        "password": "bret",
-        "role": "student"
+      "id": 1,
+      "name": "Ahmed Al-Sayed",
+      "username": "ahmed.alsayed@stu.edu.qa",
+      "password": "ahmed123",
+      "role": "student"
     },
     {
-        "id": 2,
-        "name": "Ervin Howell",
-        "username": "Antonette",
-        "password": "antonette",
-        "role": "instructor"
+      "id": 2,
+      "name": "Fatima Al-Hussein",
+      "username": "fatima.alhussein@stu.edu.qa",
+      "password": "fatima123",
+      "role": "instructor"
     },
     {
-        "id": 3,
-        "name": "Clementine Bauch",
-        "username": "Samantha",
-        "password": "samantha",
-        "role": "administrator"
+      "id": 3,
+      "name": "Khalid Al-Rahim",
+      "username": "khalid.alrahim@stu.edu.qa",
+      "password": "khalid123",
+      "role": "administrator"
     },
     {
-        "id": 4,
-        "name": "Patricia Lebsack",
-        "username": "Karianne",
-        "password": "karianne",
-        "role": "student"
+      "id": 4,
+      "name": "Aisha Al-Khalifa",
+      "username": "aisha.alkhalifa@stu.edu.qa",
+      "password": "aisha123",
+      "role": "student"
     },
     {
-        "id": 5,
-        "name": "Chelsey Dietrich",
-        "username": "Kamren",
-        "password": "kamren",
-        "role": "student"
+      "id": 5,
+      "name": "Mohammed Al-Farsi",
+      "username": "mohammed.alfarsi@stu.edu.qa",
+      "password": "mohammed123",
+      "role": "student"
     },
     {
-        "id": 6,
-        "name": "Mrs. Dennis Schulist",
-        "username": "Leopoldo_Corkery",
-        "password": "leopoldo_corkery",
-        "role": "instructor"
+      "id": 6,
+      "name": "Sara Al-Mutairi",
+      "username": "sara.almutairi@stu.edu.qa",
+      "password": "sara123",
+      "role": "instructor"
+    },
+    {
+      "id": 7,
+      "name": "Omar Al-Karim",
+      "username": "omar.alkarim@stu.edu.qa",
+      "password": "omar123",
+      "role": "student"
+    },
+    {
+      "id": 8,
+      "name": "Laila Al-Amiri",
+      "username": "laila.alamiri@stu.edu.qa",
+      "password": "laila123",
+      "role": "administrator"
+    },
+    {
+      "id": 9,
+      "name": "Yousef Al-Mansour",
+      "username": "yousef.almansour@stu.edu.qa",
+      "password": "yousef123",
+      "role": "student"
+    },
+    {
+      "id": 10,
+      "name": "Zainab Al-Mutlaq",
+      "username": "zainab.almutlaq@stu.edu.qa",
+      "password": "zainab123",
+      "role": "instructor"
+    },
+    {
+      "id": 11,
+      "name": "Othman Al-Saud",
+      "username": "othman.alsaud@stu.edu.qa",
+      "password": "othman123",
+      "role": "student"
+    },
+    {
+      "id": 12,
+      "name": "Noor Al-Hassan",
+      "username": "noor.alhassan@stu.edu.qa",
+      "password": "noor123",
+      "role": "administrator"
+    },
+    {
+      "id": 13,
+      "name": "Hassan Al-Nasser",
+      "username": "hassan.alnasser@stu.edu.qa",
+      "password": "hassan123",
+      "role": "student"
+    },
+    {
+      "id": 14,
+      "name": "Maha Al-Qassim",
+      "username": "maha.alqassim@stu.edu.qa",
+      "password": "maha123",
+      "role": "instructor"
+    },
+    {
+      "id": 15,
+      "name": "Salim Al-Rashid",
+      "username": "salim.alrashid@stu.edu.qa",
+      "password": "salim123",
+      "role": "student"
     }
-]
+  ]
+  

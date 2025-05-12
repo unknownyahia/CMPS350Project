@@ -6,6 +6,7 @@ import PageTitle from "../../PageTitle";
 import FormGrade from "./FormGrade";
 
 export default async function GradesPage({ searchParams }) {
+  // Next.js automatically parses searchParams for server components:
   const classId = searchParams.classId;
   const studentCourses = await StudentCourse.getStudentCourses(
     classId,

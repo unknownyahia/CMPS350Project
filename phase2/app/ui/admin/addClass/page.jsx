@@ -1,38 +1,30 @@
-"use client";
-import React, { useState } from "react";
+// app/ui/admin/addClass/page.jsx
+import Courses from "../../../../repos/courses";
+import Users from "../../../../repos/user";
 import { Logout } from "../../localStorageUser";
 import PageTitle from "../../PageTitle";
-import Back from "../../instructor/grades/Back";
 import FormAddClass from "./FormAddClass";
+import Back from "../../instructor/grades/Back";
 
-export default function AddClassPage({ searchParams }) {
-  const courses = searchParams.courses;
-  const instructors = searchParams.instructors;
-  const [alert, setAlert] = useState("");
+export default async function AddClassPage() {
+  // Fetch courses and instructors from your existing repos
+  const [courses, instructors] = await Promise.all([
+    Courses.getCourses(),
+    Users.getInstructors(),
+  ]);
 
   return (
     <>
       <PageTitle title="Management students, courses." />
       <main>
         <nav className="navbar">
-          <button className="btn" onClick={() => Logout()}>
-            Logout
-          </button>
-          <Back />
+          <div className="navbar-buttons">
+            <Logout />
+            <Back />
+          </div>
         </nav>
         <section className="form-section">
-          <div
-            id="alert_box"
-            className="alert"
-            style={{ display: alert ? "block" : "none" }}
-          >
-            {alert}
-          </div>
-          <FormAddClass
-            courses={courses}
-            instructors={instructors}
-            setAlert={setAlert}
-          />
+          <FormAddClass courses={courses} instructors={instructors} />
         </section>
       </main>
     </>

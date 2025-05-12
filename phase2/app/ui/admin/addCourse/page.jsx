@@ -1,33 +1,27 @@
-"use client";
-import React, { useState } from "react";
+// app/ui/admin/addCourse/page.jsx
+
+import Courses from "../../../../repos/courses";
 import { Logout } from "../../localStorageUser";
 import PageTitle from "../../PageTitle";
-import Back from "../../instructor/grades/Back";
 import FormAddCourse from "./FormAddCourse";
+import Back from "../../instructor/grades/Back";
 
-export default function AddCoursePage({ searchParams }) {
-  const courses = searchParams.courses;
-  const [alert, setAlert] = useState("");
+export default async function AddCoursePage() {
+  // fetch on the server
+  const courses = await Courses.getCourses();
 
   return (
     <>
       <PageTitle title="Management students, courses." />
       <main>
         <nav className="navbar">
-          <button className="btn" onClick={() => Logout()}>
-            Logout
-          </button>
-          <Back />
+          <div className="navbar-buttons">
+            <Logout />
+            <Back />
+          </div>
         </nav>
         <section className="form-section">
-          <div
-            id="alert_box"
-            className="alert"
-            style={{ display: alert ? "block" : "none" }}
-          >
-            {alert}
-          </div>
-          <FormAddCourse courses={courses} setAlert={setAlert} />
+          <FormAddCourse courses={courses} />
         </section>
       </main>
     </>

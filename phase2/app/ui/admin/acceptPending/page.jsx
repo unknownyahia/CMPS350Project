@@ -1,53 +1,25 @@
-"use client";
-import React, { useEffect, useState } from "react";
+// app/ui/admin/acceptPending/page.jsx
 import StudentCourse from "../../../../repos/studentCourse";
-import Requests from "../../Requests";
 import { Logout } from "../../localStorageUser";
 import PageTitle from "../../PageTitle";
+import ActionAccept from "./ActionAccept";
 import Back from "../../instructor/grades/Back";
 
-export default function AcceptPending({ searchParams }) {
+export default async function PendingPage({ searchParams }) {
   const classId = searchParams.classId;
-  const [studentCourses, setStudentCourses] = useState([]);
-  const [alert, setAlert] = useState("");
-
-  useEffect(() => {
-    async function load() {
-      const data = await StudentCourse.getStudentCourses(classId, "pending");
-      setStudentCourses(data);
-    }
-    load();
-  }, [classId]);
-
-  const handleAction = async (studentCourseId, action) => {
-    try {
-      let res;
-      if (action === "accept") {
-        res = await Requests.requestPATCH("/acceptPending", { studentCourseId });
-      } else {
-        res = await Requests.requestDelete("/acceptPending", { studentCourseId });
-      }
-      const result = await res.json();
-      if (result.success) {
-        setStudentCourses((prev) => prev.filter((sc) => sc.id !== studentCourseId));
-      } else {
-        setAlert(result.message);
-      }
-    } catch (err) {
-      setAlert(err.message);
-    }
-  };
+  const studentCourses = await StudentCourse.getStudentCourses(
+    classId,
+    "pending"
+  );
+  const courseName = studentCourses[0]?.class?.course?.name || "";
 
   return (
     <>
-      <PageTitle title="Management students, courses." />
+      <PageTitle title={`Pending Registrations: ${courseName}`} />
       <main>
         <nav className="navbar">
-          <div className="navbar-brand">Pending Registrations</div>
           <div className="navbar-buttons">
-            <button className="btn" onClick={() => Logout()}>
-              Logout
-            </button>
+            <Logout />
             <Back />
           </div>
         </nav>
@@ -60,23 +32,12 @@ export default function AcceptPending({ searchParams }) {
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody id="pending_list">
+            <tbody>
               {studentCourses.map((sc) => (
                 <tr key={sc.id}>
                   <td>{sc.student.name}</td>
                   <td>
-                    <button
-                      className="btn btn-success"
-                      onClick={() => handleAction(sc.id, "accept")}
-                    >
-                      Accept
-                    </button>
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => handleAction(sc.id, "remove")}
-                    >
-                      Remove
-                    </button>
+                    <ActionAccept studentCourseId={sc.id} />
                   </td>
                 </tr>
               ))}
@@ -84,13 +45,7 @@ export default function AcceptPending({ searchParams }) {
           </table>
         </section>
 
-        <div
-          id="alert_box"
-          className="alert"
-          style={{ display: alert ? "block" : "none" }}
-        >
-          {alert}
-        </div>
+        <div id="alert_box" className="alert" />
       </main>
     </>
   );

@@ -1,0 +1,75 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  student
+  instructor
+  administrator
+}
+
+enum CourseStatus {
+  pending
+  registered
+  finalized
+}
+
+model User {
+  id             Int             @id @default(autoincrement())
+  name           String
+  username       String          @unique
+  password       String
+  role           Role
+  classes        Class[]
+  studentCourses StudentCourse[]
+}
+
+model Course {
+  id            Int            @id @default(autoincrement())
+  name          String         @unique
+  prerequisites Prerequisite[] @relation("CoursePrerequisites")
+  requiredBys   Prerequisite[] @relation("PrerequisiteCourse")
+  classes       Class[]
+}
+
+model Prerequisite {
+  id             Int @id @default(autoincrement())
+  courseId       Int
+  prerequisiteId Int
+
+  course       Course @relation("CoursePrerequisites", fields: [courseId], references: [id], onDelete: Cascade)
+  prerequisite Course @relation("PrerequisiteCourse", fields: [prerequisiteId], references: [id], onDelete: Cascade)
+
+  @@unique([courseId, prerequisiteId])
+}
+
+model Class {
+  id             Int             @id @default(autoincrement())
+  maxStudents    Int
+  courseId       Int
+  instructorId   Int
+  course         Course          @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  instructor     User            @relation(fields: [instructorId], references: [id], onDelete: Cascade)
+  studentCourses StudentCourse[]
+}
+
+model StudentCourse {
+  id        Int          @id @default(autoincrement())
+  studentId Int
+  classId   Int
+  status    CourseStatus
+  grade     Int?
+  student   User         @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  class     Class        @relation(fields: [classId], references: [id], onDelete: Cascade)
+
+  @@unique([studentId, classId])
+}

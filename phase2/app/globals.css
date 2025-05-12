@@ -1,0 +1,563 @@
+/* === RESET & GLOBAL STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === NAVIGATION BAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #8e1837;
+  color: #fff;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-buttons button {
+  margin-left: 1rem;
+}
+
+/* === BUTTON STYLES === */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #bbb;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #999;
+}
+
+.btn-primary {
+  background-color: #8e1837;
+}
+
+.btn-primary:hover {
+  background-color: #8e1837;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* === ALERT MESSAGES === */
+.alert {
+  margin: 1rem 2rem;
+  padding: 0.75rem 1rem;
+  background-color: #f8d7da;
+  border: 1px solid #f5c2c7;
+  color: #842029;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* === CARD & CONTENT STYLES === */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem 2rem;
+  gap: 1rem;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img {
+  width: 100%;
+  display: block;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* === FORM STYLES === */
+.form,
+.login-form,
+.form-inline {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form label,
+.login-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="number"],
+.login-form input[type="text"],
+.login-form input[type="password"],
+.form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-grade {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* === LOGIN WRAPPER === */
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f4f7f6;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
+/* === CONTENT & SEARCH STYLES === */
+.content {
+  padding: 2rem;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.search-form {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+}
+
+.search-form button {
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/* === FORM SECTIONS === */
+.form-section {
+  padding: 2rem;
+  background-color: #fff;
+  max-width: 500px;
+  margin: 2rem auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-header {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #fff;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.page-header h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+/***********************************************
+ * TABLE LAYOUT FOR COURSES
+ ***********************************************/
+
+/* Container around the table */
+.courses-table {
+  margin: 1rem auto;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* Basic table styling */
+.courses-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Table header cells */
+.courses-table th {
+  background-color: #f7f7f7;
+  font-weight: bold;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Table body cells */
+.courses-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* Hover effect for rows */
+.courses-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* 
+ * Example styling for your "subject" and "action" columns, 
+ * if you want to adjust widths:
+ */
+/*
+.courses-table td:nth-child(1) {
+  width: 60%;
+}
+.courses-table td:nth-child(2) {
+  width: 40%;
+}
+*/
+
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .navbar-buttons {
+    margin-top: 1rem;
+  }
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form,
+  .login-form,
+  .form-section {
+    width: 90%;
+  }
+}
+/* ===== TOP BAR ===== */
+.top-bar {
+  width: 100%;
+  background-color: #000;
+  padding: 0.75rem 1rem;
+}
+
+.top-bar-logo {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* ===== PAGE WRAPPER FOR LOGIN ===== */
+.login-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 48px); /* subtract top bar & footer height as needed */
+  background-color: #f1f1f1;
+  flex-direction: column;
+}
+
+/* ===== LOGIN BOX ===== */
+.login-box {
+  background-color: #fff;
+  width: 480px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.login-title-box {
+  background-color: #8e1837;   /* Example: your original maroon color */
+  width: 480px;               /* Or 100% if you want a full-width bar */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* Remove fixed height: let padding + content determine box height */
+  padding: 1.5rem; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  /* Use flex so text stays vertically centered if you add more height/padding */
+  display: flex;
+  align-items: center;
+}
+
+.login-title {
+  /* Large, bold, uppercase text. You can adjust font-size as needed */
+  font-size: 2rem;  
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;               /* Remove default h1/h2 margins */
+  padding: 0;              /* No extra padding needed here */
+  text-align: left;
+}
+
+
+/* ===== LOGIN FORM ===== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ===== NOTICE BOX ===== */
+.notice-box {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.notice-box a.link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.notice-box a.link:hover {
+  text-decoration: underline;
+}
+
+/* ===== SIGN IN BUTTON ===== */
+.btn-signin {
+  background-color: #8e1837;
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-signin:hover {
+  background-color: #333;
+}
+
+/* ===== FOOTER ===== */
+.page-footer {
+  background-color: #8e1837;
+  color: #fff;
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+}
+/* Header container: full-width white bar */
+.page-header {
+  background-color: #fff; /* White background */
+  padding: 1rem;
+}
+
+/* Inner container to align logo and title side by side */
+.header-container {
+  display: flex;
+  align-items: center; 
+  max-width: 1200px;   /* or any max width you prefer */
+  margin: 0 auto;      /* center within page */
+}
+
+/* Logo styling */
+.logo {
+  height: 50px;       /* or whatever size you prefer */
+  margin-right: 1rem; /* spacing between logo and title text */
+}
+
+/* Page title styling */
+.page-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;  /* remove default H1 margin */
+}
+/* Header with white background */
+.page-header {
+  background-color: #fff; /* White background */
+  padding: 1rem 0; /* Only vertical padding, no horizontal padding */
+  margin: 0; /* Remove default margins */
+}
+
+/* Container for aligning logo and title */
+.header-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px; /* Optional: adjust maximum width as needed */
+  margin: 0 auto; /* Centers container in the viewport */
+  padding: 0; /* Remove internal horizontal spacing */
+}
+
+/* Logo styling */
+.logo {
+  height: 50px;       /* Adjust height as needed */
+  margin: 0;          /* Remove any margin */
+  padding-left: 0;    /* Ensure no extra space on the left */
+}
+
+/* Page title styling */
+.page-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0 0 0 1rem;  /* Only space on the left of the title, leaving logo flush at left */
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;  /* Ensure no padding */
+}
+.grades-table-section {
+  margin: 1rem auto;
+  max-width: 600px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.grades-table-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.grades-table-section th {
+  background-color: #f7f7f7;
+  font-weight: bold;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #ddd;
+}
+
+.grades-table-section td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.grades-table-section tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.grades-table-section input[type="number"] {
+  width: 100%;
+  max-width: 120px;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+

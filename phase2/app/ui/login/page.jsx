@@ -1,10 +1,8 @@
-// app/ui/login/page.jsx
 "use client";
-
 import React, { useState, useRef } from "react";
-import ApiClient from "../common/ApiClient.js";
-import { UserSession } from "../common/UserSession.js";
-import NotificationToast from "../common/NotificationToast.jsx";
+import Requests from "../Requests";
+import localStorageUser from "../localStorageUser";
+import Alert from "../Alert";
 
 export default function Login() {
   const [alert, setAlert] = useState("");
@@ -17,22 +15,22 @@ export default function Login() {
     const password = passwordRef.current.value;
 
     try {
-      const response = await ApiClient.fetchPost("/login", { username, password });
-      const result = await response.json();
-
-      if (result.success) {
-        UserSession.store(result.payload);
-        window.location.href = `/ui/?userId=${result.payload.id}`;
+      const request = await Requests.requestPost(`/login`, { username, password });
+      const data = await request.json();
+      if (data.success) {
+        localStorageUser.saveUser(data.data);
+        window.location.href = `/ui/?userId=${data.data.id}`;
       } else {
-        setAlert(result.error);
+        setAlert(data.message);
       }
-    } catch (err) {
-      setAlert(err.message);
+    } catch (error) {
+      setAlert(error.message);
     }
   };
 
   return (
     <>
+      {/* --- page header with logo --- */}
       <header className="page-header">
         <div className="header-container">
           <img
@@ -46,14 +44,20 @@ export default function Login() {
 
       <main>
         <div className="login-page-wrapper">
+          {/* --- maroon title bar --- */}
           <div className="login-title-box">
             <h2 className="login-title">SIGN IN</h2>
           </div>
 
+          {/* --- white login panel --- */}
           <div className="login-box">
-            <NotificationToast message={alert} clear={() => setAlert("")} />
+            <Alert message={alert} setAlert={setAlert} />
 
-            <form id="login_form" className="login-form" onSubmit={handleSubmit}>
+            <form
+              id="login_form"
+              className="login-form"
+              onSubmit={handleSubmit}
+            >
               <label htmlFor="username">Username</label>
               <input
                 ref={userRef}
@@ -82,6 +86,7 @@ export default function Login() {
         </div>
       </main>
 
+      {/* --- page footer --- */}
       <footer className="page-footer">
         <p>© 2025 Inc | All Rights Reserved</p>
       </footer>

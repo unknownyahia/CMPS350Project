@@ -603,5 +603,72 @@ a {
   padding: 0.5rem 1rem;
   border-radius: 4px;
 }
+/* === STATISTICS LAYOUT === */
+/* === STATISTICS LAYOUT (ROWS) === */
+.statistics {
+  display: grid;
+  /* force a single column so each item is on its own “row” */
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 800px;      /* adjust as needed */
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+
+/* === COUNT CARDS === */
+.count-card {
+  background-color: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.count-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.count-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+.count-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #8e1837; /* primary maroon */
+  line-height: 1;
+}
+
+/* === CHART BLOCKS === */
+.chart {
+  background-color: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.chart h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #374151;
+  text-align: center;
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 640px) {
+  .count-value {
+    font-size: 1.5rem;
+  }
+  .chart h2 {
+    font-size: 1rem;
+  }
+}
+
 
 

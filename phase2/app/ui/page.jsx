@@ -57,21 +57,21 @@ export default async function MainPage({ searchParams }) {
             <>
               <a
                 href={`/ui/admin/statistics?userId=${userId}`}
-                className="add-btn"
+                className="btn-signin"
               >
-                statistics
+                Statistics
               </a>
               <a
                 href={`/ui/admin/addCourse?userId=${userId}`}
-                className="add-btn"
+                className="btn-signin"
               >
-                add course
+                Add Course
               </a>
               <a
                 href={`/ui/admin/addClass?userId=${userId}`}
-                className="add-btn"
+                className="btn-signin"
               >
-                add class
+                Add Class
               </a>
             </>
           )}

@@ -32,10 +32,10 @@ export default function ActionAccept({ studentCourseId }) {
 
   return (
     <div className="btns">
-      <button className="update-btn" onClick={() => accept("accept")}>
+      <button className="btn btn-success" onClick={() => accept("accept")}>
         accept
       </button>
-      <button className="delete-btn" onClick={() => accept("remove")}>
+      <button className="btn btn-danger" onClick={() => accept("remove")}>
         Remove
       </button>
       <Alert message={alert} setAlert={setAlert} />

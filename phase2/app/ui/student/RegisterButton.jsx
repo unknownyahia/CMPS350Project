@@ -26,7 +26,7 @@ export default function RegisterButton({ userId, classId }) {
   return (
     <>
       {alert && <Alert message={alert} setAlert={setAlert} />}
-      <button className="btn" onClick={register}>
+      <button className="btn-signin" onClick={register}>
         Register
       </button>
     </>

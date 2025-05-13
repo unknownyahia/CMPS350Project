@@ -16,8 +16,8 @@ export function Logout() {
     window.location.href = "/ui/login";
   };
   return (
-    <button className="add-btn" id="add-cours" onClick={onClickLogout}>
-      logout
+    <button className="btn-signin" id="add-cours" onClick={onClickLogout}>
+      Logout
     </button>
   );
 }

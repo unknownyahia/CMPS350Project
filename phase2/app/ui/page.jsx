@@ -1,3 +1,5 @@
+// phase2/app/layout.js
+
 import { redirect } from "next/navigation";
 import { Logout } from "./localStorageUser";
 import PageTitle from "./PageTitle";
@@ -5,8 +7,8 @@ import User from "../../repos/user";
 import Classes from "../../repos/classes";
 import AdminCards from "./admin/cards";
 import InstructorCards from "./instructor/cards";
-
 import StudentCards from "./student/cards";
+
 const getUser = async (userId) => {
   if (!userId) {
     redirect("/ui/login");
@@ -31,14 +33,24 @@ const getClasses = async (user, searchTerm) => {
 };
 
 export default async function MainPage({ searchParams }) {
-  const userId = (await searchParams).userId;
+  const userId     = (await searchParams).userId;
   const searchTerm = (await searchParams).searchTerm;
-  const user = await getUser(userId);
-  const classes = await getClasses(user, searchTerm);
+  const user       = await getUser(userId);
+  const classes    = await getClasses(user, searchTerm);
+
   return (
     <>
-      <PageTitle title="Management students, courses." />
-      <main>
+      {/* Navbar: title on left, logout & admin links on right */}
+      <header className="navbar">
+        <header className="page-header">
+        <div className="header-container">
+          <img
+            src="https://www.qu.edu.qa/Style%20Library/assets/images/qulogo.png"
+            alt="Qatar University Logo"
+            className="logo"
+          />
+        </div>
+      </header>
         <div id="btns-list" className="btns-list">
           <Logout />
           {user.role === "administrator" && (
@@ -46,30 +58,28 @@ export default async function MainPage({ searchParams }) {
               <a
                 href={`/ui/admin/statistics?userId=${userId}`}
                 className="add-btn"
-                id="add-cours"
-                // onclick="AddCours.ShowAddCours()"
               >
                 statistics
               </a>
               <a
                 href={`/ui/admin/addCourse?userId=${userId}`}
                 className="add-btn"
-                id="add-cours"
-                // onclick="AddCours.ShowAddCours()"
               >
                 add course
               </a>
               <a
                 href={`/ui/admin/addClass?userId=${userId}`}
                 className="add-btn"
-                id="add-cours"
-                // onclick="AddClass.ShowAddClass()"
               >
                 add class
               </a>
             </>
           )}
         </div>
+      </header>
+
+      {/* Centered search bar */}
+      <div className="search-bar">
         <form method="get" id="className-search" className="cours-search">
           <input
             type="text"
@@ -78,17 +88,20 @@ export default async function MainPage({ searchParams }) {
             placeholder="Search by Name"
             defaultValue={searchTerm}
           />
-          <input
-            type="hidden"
-            name="userId"
-            placeholder="Search by Name"
-            value={userId}
-          />
+          <input type="hidden" name="userId" value={userId} />
           <button className="search-btn">Search</button>
         </form>
+      </div>
+
+      {/* Main content: cards */}
+      <main>
         <div id="cours-list" className="cours-list">
-          {user.role === "administrator" && <AdminCards classes={classes} />}
-          {user.role === "instructor" && <InstructorCards classes={classes} />}
+          {user.role === "administrator" && (
+            <AdminCards classes={classes} />
+          )}
+          {user.role === "instructor" && (
+            <InstructorCards classes={classes} />
+          )}
           {user.role === "student" && (
             <StudentCards classes={classes} userId={userId} />
           )}

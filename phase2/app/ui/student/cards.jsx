@@ -18,10 +18,10 @@ export default function StudentCards({ classes, userId }) {
             const studentCourse = cls.studentCourses[0];
             const status = studentCourse?.status;
             const grade = studentCourse?.grade;
-            // compute available seats if your class object has a capacity field
+            // compute available seats based on maxStudents
             const availableSeats =
-              typeof cls.capacity !== "undefined"
-                ? cls.capacity - (cls.studentCourses?.length || 0)
+              typeof cls.maxStudents !== "undefined"
+                ? cls.maxStudents - (cls.studentCourses?.length || 0)
                 : "";
 
             return (

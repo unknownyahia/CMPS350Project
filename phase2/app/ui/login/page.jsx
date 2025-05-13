@@ -34,7 +34,7 @@ export default function Login() {
       <header className="page-header">
         <div className="header-container">
           <img
-            src="/images/qulogo.png"
+            src="https://www.qu.edu.qa/Style%20Library/assets/images/qulogo.png"
             alt="Qatar University Logo"
             className="logo"
           />

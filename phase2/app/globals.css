@@ -559,5 +559,49 @@ a {
   border-radius: 4px;
   border: 1px solid #ccc;
 }
+/* globals.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;   /* your deep-red bar */
+  padding: 1rem 2rem;
+  color: #fff;
+}
+
+.btns-list {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* bring the search form into its own centered row */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  background-color: #f4f7f6;  /* match your page bg */
+  padding: 1rem 0;
+}
+
+.cours-search {
+  display: flex;
+  align-items: center;
+}
+
+.cours-search input[type="text"] {
+  width: 300px;      /* or whatever width you like */
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.search-btn {
+  margin-left: 0.5rem;
+  background-color: #8e1837;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
 
 

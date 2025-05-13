@@ -1,18 +1,29 @@
-import User from "../../../repos/user.js";
-import createResponse from "../response.js";
+// app/api/login/route.js
+import AccountManager from "../../../dataServices/accountManager.js";
+import { buildApiResponse } from "../helpers/apiResponse.js";
+
 export async function POST(request) {
-  const data = await request.json();
+  const { username: userId, password: secretKey } = await request.json();
+
   try {
-    const user = await User.getUserByUsernamePassword(
-      data.username,
-      data.password
+    const account = await AccountManager.retrieveByCredentials(
+      userId,
+      secretKey
     );
-    if (user) return createResponse({ data: user });
-    return createResponse({
-      error: "Invalid username or password",
-      status: 401,
+
+    if (account) {
+      return buildApiResponse({ payload: account });
+    }
+
+    return buildApiResponse({
+      errorMessage: "Invalid username or password",
+      statusCode: 401,
     });
-  } catch (error) {
-    return createResponse({ error: "Internal server error", status: 500 });
+  } catch (err) {
+    // Optionally log err here
+    return buildApiResponse({
+      errorMessage: "Internal server error",
+      statusCode: 500,
+    });
   }
 }

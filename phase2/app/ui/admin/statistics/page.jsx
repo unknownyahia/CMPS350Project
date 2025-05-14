@@ -1,12 +1,12 @@
 // app/(your-app-folder)/stats/page.jsx
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+
 import Statistics from "@/services/statisticsService";
 import DashboardClient from "./DashboardClient";
 
 export default async function StatsPage() {
-  const session = await getServerSession(authOptions);
+ 
 
   // if (!session) {
   //   redirect("/api/auth/signin");

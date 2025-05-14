@@ -3,8 +3,8 @@
 import { redirect } from "next/navigation";
 import { Logout } from "./localStorageUser";
 import PageTitle from "./PageTitle";
-import User from "../../repos/user";
-import Classes from "../../repos/classes";
+import User from "../../services/userService";
+import Classes from "../../services/classesService";
 import AdminCards from "./admin/cards";
 import InstructorCards from "./instructor/cards";
 import StudentCards from "./student/cards";

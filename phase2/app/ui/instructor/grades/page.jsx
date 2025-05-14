@@ -1,5 +1,5 @@
 // app/ui/instructor/grades/page.jsx
-import StudentCourse from "../../../../repos/studentCourse";
+import StudentCourse from "../../../../services/studentCourseService";
 import { Logout } from "../../localStorageUser";
 import Back from "./Back";
 import PageTitle from "../../PageTitle";

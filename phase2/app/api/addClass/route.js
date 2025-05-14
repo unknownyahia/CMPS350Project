@@ -1,5 +1,5 @@
 import createResponse from "../response.js";
-import ClassRepository from "../../../repos/classes.js";
+import ClassRepository from "../../../services/classesService.js";
 export async function POST(request) {
   const data = await request.json();
   try {

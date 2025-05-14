@@ -1,5 +1,5 @@
 // app/ui/admin/acceptPending/page.jsx
-import StudentCourse from "../../../../repos/studentCourse";
+import StudentCourse from "../../../../services/studentCourseService";
 import { Logout } from "../../localStorageUser";
 import PageTitle from "../../PageTitle";
 import ActionAccept from "./ActionAccept";

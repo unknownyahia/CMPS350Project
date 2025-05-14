@@ -1,5 +1,5 @@
 import createResponse from "../response.js";
-import studentCourse from "../../../repos/studentCourse.js";
+import studentCourse from "../../../services/studentCourseService.js";
 export async function PATCH(request) {
   const data = await request.json();
   try {

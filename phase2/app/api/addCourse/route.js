@@ -1,5 +1,5 @@
 import createResponse from "../response.js";
-import Courses from "../../../repos/courses.js";
+import Courses from "../../../services/coursesService.js";
 export async function POST(request) {
   const data = await request.json();
   try {

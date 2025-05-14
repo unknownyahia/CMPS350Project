@@ -1,6 +1,6 @@
 // app/ui/admin/addClass/page.jsx
-import Courses from "../../../../repos/courses";
-import Users from "../../../../repos/user";
+import Courses from "../../../../services/coursesService";
+import Users from "../../../../services/userService";
 import { Logout } from "../../localStorageUser";
 import PageTitle from "../../PageTitle";
 import FormAddClass from "./FormAddClass";

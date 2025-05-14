@@ -2,7 +2,7 @@
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import Statistics from "@/repos/statistics";
+import Statistics from "@/services/statisticsService";
 import DashboardClient from "./DashboardClient";
 
 export default async function StatsPage() {

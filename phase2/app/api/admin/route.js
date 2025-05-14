@@ -1,4 +1,4 @@
-import User from "../../../repos/user.js";
+import User from "../../../services/userService.js";
 import createResponse from "../response.js";
 export async function POST(request) {
   const data = await request.json();
